@@ -4,6 +4,14 @@ defmodule Radlab.CLI do
 
   @allowed_options [path: :string, checksum: :boolean, upload: :boolean]
 
+  @doc """
+  Main entry-point for CLI tool
+
+  The following switches are enabled:
+  * --path (path to firmware file)
+  * --upload (performs upload task)
+  * --checksum (confirms upload OK via checksum)
+  """
   def main(args) do
     args
     |> parse_args()
