@@ -26,7 +26,7 @@ radlab-*.tar
 .elixir_ls/*
 
 # Ignore compiled CLI app
-radlab
+/radlab
 
 # Ignore JS playground file
 test.js
