@@ -5,3 +5,5 @@ config :radlab,
   chunk_size: 20,
   client: Radlab.Firmware.HttpClient,
   upload_file_path: "example.hex"
+
+import_config "#{Mix.env()}.exs"
