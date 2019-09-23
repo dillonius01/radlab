@@ -42,7 +42,7 @@ Sometimes after sending many requests, I have noticed that the native erlang `:h
 #### Updating 100+ devices
 I would consider spawning a new Elixir process for each update and starting them in parallel. That way, multiple devices could concurrently update.
 
-#### What if response is async via websocket?
+#### What responses arrive asynchronously via websocket?
 If uploading a chunk always returned a 200 and the actual success/failure message came back asynchronously, I would redesign the system such that there would be a process (perhaps an OTP GenServer) responsible for managing a particular device's update. I would have that GenServer subscribe to events on the websocket, so that if a success event was published, it would initiate the next chunk. If a failure event was published, the GenServer would re-try the failed chunk
 
 #### What if responses take 30s?
